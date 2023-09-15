@@ -13,16 +13,11 @@ app.use(express.json());
 
 dotenv.config();
 // Configure CORS
-const whitelist = ['https://uptask-lac.vercel.app/'];
 const corsOptions = {
-    origin: function(origin, callback) {
-        if(whitelist.includes(origin)) {
-            callback(null, true); // Can query the api
-        } else {
-            callback(new Error('Cors Error')); // Cannot access
-        }
-    }
-}
+    origin: 'https://uptask-lac.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    optionsSuccessStatus: 204,
+};
 app.use(cors(corsOptions))
 conectDB();
 
