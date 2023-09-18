@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 import generateId from "../helpers/generateId.js";
 import generateJWT from "../helpers/generateJWT.js";
-import { registerEmail, forgetPasswordEmail } from "../helpers/emails.js";
+import { registerEmail, forgetPasswordEmail } from "../helpers/sendGrid.js";
 
 // User Register
 const register = async (req, res) => {
