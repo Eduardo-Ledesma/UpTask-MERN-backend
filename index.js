@@ -12,18 +12,7 @@ const app = express();
 app.use(express.json());
 
 dotenv.config();
-// Configure CORS
-const whitelist = [process.env.FRONTEND_URL];
-const corsOptions = {
-    origin: function(origin, callback) {
-        if(whitelist.includes(origin)) {
-            callback(null, true); // Can query the api
-        } else {
-            callback(new Error('Cors Error')); // Cannot access
-        }
-    }
-}
-app.use(cors(corsOptions))
+app.use(cors())
 conectDB();
 
 // Routing
