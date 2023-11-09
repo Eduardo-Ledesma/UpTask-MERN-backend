@@ -28,10 +28,7 @@ const server = app.listen(PORT, () => {
 
 // Socket.io
 const io = new Server(server, {
-    pingTimeout: 60000,
-    cors: {
-        origin: process.env.FRONTEND_URL,
-    }
+    pingTimeout: 60000
 });
 
 io.on('connection', socket => {
